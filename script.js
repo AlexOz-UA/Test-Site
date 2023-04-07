@@ -10,7 +10,7 @@ document.onreadystatechange = function () {
       document.getElementById("Video").style.opacity = "1";
       document.getElementById("prev").style.opacity = "1";
       loadCars();
-    });
+    },1500);
   }
 };
 function showPass(pass) {
