@@ -1,0 +1,411 @@
+body {
+  height: 4000px;
+  width: 910px;
+  background-color: #282828;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.formgroup label {
+  font-weight: bold;
+}
+#cart {
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+  background: tan;
+  margin-right: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+#myVideo {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.container2 {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.responsive-iframe {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 2 0px;
+  margin-left: 155px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 80%;
+}
+
+#cartModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.myFrame {
+  position: relative;
+  justify-self: center;
+  text-align: center;
+  height: 500px;
+  width: 750px;
+  margin: auto;
+}
+
+#navbarMain {
+  z-index: 1;
+  position: fixed;
+  width: 1550px;
+  opacity: 0;
+  animation: navbaranim 2.5s ease;
+  animation-delay: 1.5s;
+}
+
+.load-wrap {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 0 10px 10px 0;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #282828;
+}
+
+.load .ring {
+  animation: loadingRing 1.5s 0.3s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+}
+
+.ring {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 6px dashed #ffffff;
+  border-radius: 100%;
+}
+
+#loader {
+  top: 0;
+  left: 0;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  z-index: 999999;
+  height: 100vh;
+  background: #282828;
+  position: fixed;
+}
+
+.headerMain {
+  opacity: 0;
+  font: icon;
+  font-size: 20px;
+  font-weight: 600;
+  color: #a0a0a0;
+  animation: headeranim 2.5s ease;
+  animation-delay: 1.5s;
+}
+.heading {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.heading h1 {
+  font-size: 5rem;
+  color: #fff;
+}
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  animation: carouselcaranim 2.5s ease;
+  animation-delay: 1.5s;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+  opacity: 1;
+}
+
+.slide.current .content {
+  opacity: 1;
+  transform: translateX(600px);
+  transition: all 0.7s ease-in-out 0.3s;
+}
+
+.buttons button#next {
+  position: absolute;
+  top: 40%;
+  right: 15px;
+  opacity: 0;
+  animation: buttonanim 2.5s ease;
+  animation-delay: 1.5s;
+}
+
+.buttons button#prev {
+  position: absolute;
+  top: 40%;
+  left: 15px;
+  opacity: 0;
+  animation: headeranim 2.5s ease;
+  animation-delay: 1.5s;
+}
+
+.buttons button {
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.buttons button:hover {
+  background-color: #fff;
+  color: #333;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .slide .content {
+    bottom: -300px;
+    left: 0;
+    width: 100%;
+  }
+
+  .slide.current .content {
+    transform: translateY(-300px);
+  }
+}
+
+.slide:first-child {
+  background: url(images/car1.jpg) no-repeat center top/cover;
+}
+.slide:nth-child(2) {
+  background: url(images/car2.jpg) no-repeat center top/cover;
+}
+.slide:nth-child(3) {
+  background: url(images/car4.jpg) no-repeat center top/cover;
+}
+#scrollUp {
+  display: block;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(153, 0, 255);
+  position: fixed;
+  right: 80px;
+  bottom: 80px;
+  text-decoration: none;
+  font-size: 30px;
+  width: 85px;
+  height: 85px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 50%;
+  opacity: 1;
+  transition: all 1s;
+}
+#scrollUp.fade {
+  opacity: 0;
+}
+#Video {
+  animation: carouselcaranim 2.5s ease;
+  animation-delay: 3s;
+}
+
+#chatbot {
+  position: fixed;
+  bottom: 20px;
+  width: 260px;
+  height: 300px;
+  background-color: lightblue;
+  padding: 5px 25px;
+  left: calc(100% - 25px);
+  overflow-y: auto;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+#form_chatbot {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* align-items: flex-end; */
+  min-width: 100%;
+  min-height: 100%;
+}
+#form_chatbot input {
+  align-self: flex-start;
+  margin: 5px;
+}
+
+.show {
+  left: calc(100% - 260px) !important;
+}
+.bot_answ,
+.human_answ {
+  line-break: loose;
+  max-width: 200px;
+  text-align: start;
+  display: table;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+.human_answ {
+  background-color: #ffffff;
+  color: #000000;
+}
+.bot_answ {
+  background-color: #000000;
+  color: #ffffff;
+}
+@keyframes headeranim {
+  0% {
+    opacity: 0;
+    transform: translateX(-220%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes buttonanim {
+  0% {
+    opacity: 0;
+    transform: translateX(220%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes navbaranim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loadingRing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes carouselcaranim {
+  0% {
+    opacity: 0;
+    transform: translateY(220%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

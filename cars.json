@@ -1,0 +1,39 @@
+[
+      {
+        "name": "BMW 3 Series",
+        "img": "images/car6.png",
+        "price": "41.450$",  
+        "description": "The BMW 3 Series is a compact executive car manufactured by the German automaker BMW since May 1975. It is the successor to the 02 Series and has been produced in seven different generations."
+      },
+      {
+        "name": "Bugatti Veyron",
+        "img": "images/car9.png",
+        "price": "1.900.000$",  
+        "description": "The Audi A4 is a line of compact executive cars produced by the German car manufacturer Audi. The A4 has been built in five generations and is based on the Volkswagen Group B platform."
+      },
+      {
+        "name": "Lamborghini Aventador",
+        "img": "images/car10.jpg",
+        "price": "517.770$",  
+        "description": "The BMW 3 Series is a compact executive car manufactured by the German automaker BMW since May 1975. It is the successor to the 02 Series and has been produced in seven different generations."
+      },
+      {
+        "name": "Mercedes E-class",
+        "img": "images/car11.png",
+        "price": "139.900$",       
+        "description": "The Mercedes-Benz C-Class is a line of compact executive cars produced by Daimler AG. Introduced in 1993 as a replacement for the 190 (W201) range, the C-Class was the smallest model in the marque's line-up until the W168 A-Class arrived in 1997."
+      },
+      {
+        "name": "Lamborgini Huracan",
+        "img": "images/car12.webp",
+        "price": "206.295$",       
+        "description": "The Mercedes-Benz C-Class is a line of compact executive cars produced by Daimler AG. Introduced in 1993 as a replacement for the 190 (W201) range, the C-Class was the smallest model in the marque's line-up until the W168 A-Class arrived in 1997."
+      },
+      {
+        "name": "Audi A7",
+        "img": "images/car13.png",
+        "price": "69.200$",  
+        "description": "The Audi A4 is a line of compact executive cars produced by the German car manufacturer Audi. The A4 has been built in five generations and is based on the Volkswagen Group B platform."
+      }
+    ]
+  

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sea Battle</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />  
+</head>
+<style>
+  body{
+  background-color: rgb(255, 255, 255);  
+  }
+  #board {
+    margin: 0 auto;
+  }
+  #board2 {
+    position: relative;
+    left: 450px;
+    bottom: 359px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 400px;
+    margin-right: auto;
+  }
+
+  td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .cell {
+    background-color: lightblue;
+  }
+  .cell2 {
+    background-color: lightblue;
+  }
+
+  .hit {
+    background-color: red;
+  }
+
+  .miss {
+    background-color: white;
+  }
+</style>
+
+<body>
+  
+  <h1 class="alert alert-primary" style="text-align: center;">Sea Battle</h1>
+    <div id="board" class="col-sm-12 p-0">
+    <table>
+      <tr>
+        <td></td>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>E</td>
+        <td>F</td>
+        <td>G</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+      </tr>
+    </table>
+  </div>
+  <div1 id="board2" class="col-sm-24 p-0">
+    <table>
+      <tr>
+        <td></td>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>E</td>
+        <td>F</td>
+        <td>G</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+        <td class="cell2"></td>
+      </tr>
+    </table>
+  </div1>
+  <div class="row"  style="position: relative;left: 15px; text-align: center; bottom: 355px;">
+    <header id="header1" class="col-sm-2 p-2 bg-primary text-white">Your name: </header>
+    <header id="header2" class="col-sm-2 p-2 bg-primary text-white">Your opponent: </header>
+    <header id="count" class="col-sm-2 p-2 bg-primary text-white">Your ship tiles left:</header>
+    <header id="count2" class="col-sm-2 p-2 bg-primary text-white">Opponent ship tiles left:</header>
+    <a href="index.html"><i class="fas fa-arrow-left"></i>Go back</a>
+    </div>
+  <script>
+    var count = document.getElementById("count")
+var count2 = document.getElementById("count2")
+var header1 = document.getElementById("header1")
+var header2 = document.getElementById("header2")
+var gameOver = false
+function Prompt(){
+  alert("Your board is left, and your opponent is right. You must shoot by the right board.")
+  let name1 = prompt("What`s your name?")
+  let name2 = prompt("What`s your opponent name?")
+  header1.innerHTML += name1
+  header2.innerHTML += name2
+}
+let size = 1;
+class Ship {
+  constructor(size) {
+    this.size = size;
+    this.sunk = false;
+  }
+}
+
+class OneTileShip extends Ship {
+  constructor() {
+    super(1);
+  }
+}
+
+class TwoTileShip extends Ship {
+  constructor() {
+    super(2);
+  }
+}
+
+class ThreeTileShip extends Ship {
+  constructor() {
+    super(3);
+  }
+}
+
+class FourTileShip extends Ship {
+  constructor() {
+    super(4);
+  }
+}
+
+class GameAll{
+  constructor(cell) {
+    this.hitscount = 0
+    this.board = document.querySelectorAll(cell);
+    this.ships = [];
+    this.shots = 0;
+    this.hits = 0;
+    this.ships2 = 9;
+    this.misses = 0;
+    this.hitscount = 0;
+    this.placeShips();
+    this.board.forEach((cell) => {
+      cell.addEventListener("click", (e) => {
+        if (!gameOver) {
+          this.shoot(e.target);
+        }
+      });
+    });
+  }
+  checkRadius(cell) {
+    let x = cell.cellIndex;
+    let y = cell.parentElement.rowIndex;
+    let coordinates = [
+      [x - 1, y - 1],
+      [x, y - 1],
+      [x + 1, y - 1],
+      [x - 1, y],
+      [x + 1, y],
+      [x - 1, y + 1],
+      [x, y + 1],
+      [x + 1, y + 1],
+    ];
+    for (let i = 0; i < coordinates.length; i++) {
+      let x = coordinates[i][0];
+      let y = coordinates[i][1];
+    for (let i = 0; i < 7; i++) {
+      for (let j = 0; j < 7; j++) {
+        if (i >= x - 1 && i <= x + 1 && j >= y - 1 && j <= y + 1) {
+          let checkCell = this.board[i + j * 7];
+          if (checkCell.classList.contains("ship")) {
+            return false;
+          }
+        }
+      }
+    }
+    return true;
+  }
+      if (x >= 0 && x < 7 && y >= 0 && y < 7) {
+        let checkCell = this.board[x + y * 7];
+        this.board[x + y * 7].innerHTML = x + y * 7;
+        if (checkCell.classList.contains("ship")) {
+          return false;
+        }
+      }
+    }
+    
+  placeShips() {
+    for (let i = 0; i < 10; i++) {
+      this.ships.push(new Ship());
+    }
+    let ships = [
+      new OneTileShip(),
+      new TwoTileShip(),
+      new ThreeTileShip(),
+      new FourTileShip(),
+    ];
+    ships.forEach((ship) => {
+      let placed = false;
+      while (!placed) {
+        let vertical = Math.random() > 0.5;
+        let x = Math.floor(Math.random() * 7);
+        let y = Math.floor(Math.random() * 7);
+        if (vertical) {
+          if (y + ship.size > 7) continue;
+          let canPlace = true;
+          for (let i = y; i < y + ship.size; i++) {
+            let cell = this.board[x + i * 7];
+            
+            if (cell.classList.contains("ship") || !this.checkRadius(cell)) {
+              canPlace = false;
+              break;
+            }
+          }
+          if (canPlace) {
+            for (let i = y; i < y + ship.size; i++) {
+              let cell = this.board[x + i * 7];
+              cell.classList.add("ship");
+            }
+            placed = true;
+          }
+        } else {
+          if (x + ship.size > 7) continue;
+          let canPlace = true;
+          for (let i = x; i < x + ship.size; i++) {
+            let cell = this.board[i + y * 7];
+            if (cell.classList.contains("ship") || !this.checkRadius(cell)) {
+              canPlace = false;
+              break;
+            }
+          }
+          if (canPlace) {
+            for (let i = x; i < x + ship.size; i++) {
+              let cell = this.board[i + y * 7];
+              cell.classList.add("ship");
+            }
+            placed = true;
+          }
+        }
+      }
+    });
+  }
+}
+class Game extends GameAll{
+  constructor(){
+    super(".cell2")
+  }
+    shoot(cell) {
+      if (cell.classList.contains("hit") || cell.classList.contains("miss")) {
+        return;
+      }
+      if(isHit(cell)) {
+        isPlayerHit = true;
+    }else {
+        isPlayerHit = false;
+    }
+    if(gameOver == true){
+    
+    }
+      if (cell.classList.contains("ship")) {
+        count2.innerHTML = `Opponent ship tiles left: ${this.ships2}` 
+        this.hits++;
+        this.ships2--
+        this.hitscount = 1
+        cell.classList.add("hit");
+        if (this.hits === this.ships.length) {
+          gameOver = true;
+          alert("Game over! You've sunk all of the Opponent's ships!");
+        }
+        return this.hitscount
+      } else {
+        this.misses++
+        this.hitscount = 0
+        cell.classList.add("miss");
+        return this.hitscount
+      }
+    }
+  }
+class GameAi extends GameAll {
+constructor(){
+  super(".cell")
+}
+  shootAi(){
+    let unhitCells = Array.from(this.board).filter(cell => !cell.classList.contains("hit") && !cell.classList.contains("miss"));
+    let randomIndex = Math.floor(Math.random() * unhitCells.length);
+    let randomCell = unhitCells[randomIndex];
+    if(randomCell.classList.contains("ship")) {
+        randomCell.classList.add("hit");
+        count.innerHTML = `Your ship tiles left: ${this.ships2}` 
+        this.hits++;
+        this.ships2--
+        setTimeout(() => {
+        alert("Your opponent shot one of your ship tiles. He is shooting again")
+      }, 500);
+      setTimeout(() => {
+        this.shootAi()
+      }, 1500);
+        randomCell.classList.add("hit");
+        if (this.hits === this.ships.length) {
+          gameOver = true;
+          alert("Game over! Your Opponent sunk all your ships!");
+          return gameOver
+        }
+    } else {
+        this.misses++;
+        randomCell.classList.add("miss");
+    }
+}
+}
+Prompt()
+function isHit(cell) {
+  // Проверяем, есть ли на данной клетке часть корабля
+  return cell.classList.contains("ship");
+}
+let isPlayerHit = false;
+const game = new Game();
+const gameAi = new GameAi();
+document.getElementById("board2").addEventListener("click", shootai)
+function shootai(){ 
+  if(!isPlayerHit) {
+setTimeout(() => {
+      gameAi.shootAi();
+  }, 1000);
+}
+else if(gameOver == false){
+  if(isPlayerHit == true) {
+  setTimeout(() => {
+  alert("You hit a opponent ship part, you can make one more shoot")
+}, 500);
+  }
+}
+else
+{
+alert("Game is ended.")
+document.getElementById("board2").removeEventListener("click", shootai)
+}
+}
+
+let cell = this.board;
+let isSafe = game.checkRadius(cell);
+let isSafeAi = gameAi.checkRadius(cell);
+window.onload = game.checkRadiusForAllShips;
+window.onload = gameAi.checkRadiusForAllShips;
+  </script>
+</body>
+
+</html>
