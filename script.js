@@ -228,7 +228,6 @@ $(function () {
   ];
   const hello = "Welcome to our auto shop! How can we assist you today?";
   const goodbye = "Thank you for choosing our auto shop! We look forward to serving you.";
-  //   $("h2").css("color", "red");
 
   $("#chatbot").click(function () {
     $(this).toggleClass("show");
