@@ -202,8 +202,6 @@ function removeItem(event) {
   const row = event.target.parentNode.parentNode;
   row.parentNode.removeChild(row);
 }
-//===================================================================================================
-//ЧАТБОТ
 $(function () {
   const phrases = [
     "Hello! How can we help you today?",
