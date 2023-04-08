@@ -290,6 +290,10 @@ html {
   .myFrame{
     left: -375px;
   }
+  .forms{
+    position: absolute;
+    float: left;
+  }
 }
 #scrollUp {
   display: block;

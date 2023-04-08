@@ -33,7 +33,7 @@ function closeLogInForm() {
   const loginIframe = document.getElementById("login-iframe");
   loginModal.style.display = "none";
   loginIframe.src = "";
-  // userHello();
+  userHello();
 }
 function openSignUpForm() {
   const signupModal = document.getElementById("signup-modal");
@@ -56,7 +56,7 @@ function getCookie(name) {
 function userHello() {
   let name = getCookie("username");
   document.getElementById("forms").innerHTML = `<div class='container-fluid'>
-            <h2 style="position: absolute; right: 120px; color:white;">You've logged as ${name}</h2>
+            <h2 style="font:italic;font-weight:600;color:white;">Hello, ${name}</h2>
         </div>`;
 }
 const slides = document.querySelectorAll(".slide");

@@ -38,10 +38,6 @@
   if (username === storedUsername && password === storedPassword) {
     alert("Log in successful!");
     document.getElementById("loginform").reset();
-    let name = getCookie("username");
-    document.getElementById("forms").innerHTML = (`<div class='container-fluid user-logged-greeting'>
-            <h2 style="position: absolute; right: 120px; color:white;">You've logged as ${name}</h2>
-        </div>`);
     }
   else {
     alert("Incorrect password or/and password. Please try again.");
