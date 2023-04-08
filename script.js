@@ -123,11 +123,11 @@ function loadCars() {
   };
 }
 function insertCars(cars) {
-  var str = `<div class="container-fluid"> 
+  var str = `<div class="container"> 
                <div class="row">`;
   for (let i = 0; i < cars.length; i++) {
-    str += `<div class="col col-6 col-sm-4 d-flex justify-content-around align-items-center flex-wrap">`;
-    str += `<div id="card" class="card" draggable="true">`;
+    str += `<div class="d-flex flex-column col col-sm-4 col-lg-4 col-2">`;
+    str += `<div id="card" class="card">`;
     str += `<img id="dot" src="images/dot.gif" class="fixed3" data-src="${cars[i].img}">`;
     str += `<div class="card-body">`;
     str += `<h5 class="card-title">${cars[i].name}</h5>`;

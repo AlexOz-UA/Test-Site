@@ -72,9 +72,10 @@
     <button id="prev"><i class="fas fa-arrow-left"></i></button>
     <button id="next"><i class="fas fa-arrow-right"></i></button>
   </div>
-  <div id="aboutus" class="d-flex flex-column justify-content-center col col-sm-12 col-4"
-    style="background-color: #282828;">
-    <h1 style="color: #a0a0a0;">Here is a little information about us:</h1>
+  <div style="align-content: center; width: 165%;">
+  <div id="aboutus" class="d-flex flex-column col col-sm-12 col-3"
+    style="background-color: #282828; align-self: center; justify-self: center;">
+    <h1 style="color: #a0a0a0; align-self: center; justify-self: center;">Here is a little information about us:</h1>
     <p style="color: rgb(211, 211, 211); font-size: 20px;">Welcome to Elite Motors, the ultimate destination for the
       world's
       most luxurious and
@@ -88,6 +89,7 @@
       At Elite Motors, we believe that driving should be an exhilarating and unforgettable experience. Let us help you
       find your dream car and discover the thrill of the open road. Contact us today to learn more about our selection,
       our services, and our commitment to excellence.</p>
+  </div>
   </div>
   <div id="ouradvantages"
     style="opacity:0; background-color: #282828; height: 330px; width: 1400px;  position: absolute; top: 1300px; left: 53px; text-align: center;">
@@ -106,13 +108,15 @@
       dedicated to providing the highest level of service and expertise. Let us help you find the perfect premium car
       and start experiencing the thrill of the open road today.</p>
   </div>
-  <div id="cars"></div>
+  <div id="cars" style="width: 165%;"></div>
 
-  <div id="Video">
-    <h1 style="color: whitesmoke; position:absolute; top:1750px; align-self: center; justify-self: center;">Here you can
+  <div class="container-fluid" id="Video" style="width: 150%; align-items: center; align-content: center;">
+    <div class="d-flex flex-column col col-sm-12 col-3">
+    <h1 style="color: whitesmoke; align-self: center; justify-self: center;">Here you can
       watch a short test-drive
       video from our client:</h1>
-    <video style="position:absolute; top:1850px; " id="myVideo" width="1000" height="400" controls>
+    </div>
+    <video class="flex-column col-sm-12 col-10" style="position:absolute; align-self: center; justify-self: center;" id="myVideo" width="1000" height="400" controls>
       <source src="images/movie.mp4" type="video/mp4">
     </video>
   </div>
@@ -127,10 +131,10 @@
         <table id="table">
           <tr>
             <th>Item</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Remove</th>
+            <th style="position: relative; left: 5px;">Price</th>
+            <th style="position: relative; left: 10px;">Quantity</th>
+            <th style="position: relative; left: 15px;">Price</th>
+            <th style="position: relative; left: 20px;">Remove</th>
           </tr>
         </table>
       </div>
