@@ -126,7 +126,7 @@ function insertCars(cars) {
   var str = `<div class="container"> 
                <div class="row">`;
   for (let i = 0; i < cars.length; i++) {
-    str += `<div class="d-flex flex-column col col-sm-4 col-lg-4 col-2">`;
+    str += `<div class="d-flex flex-column col col-sm-4 col-lg-4 col-6">`;
     str += `<div id="card" class="card">`;
     str += `<img id="dot" src="images/dot.gif" class="fixed3" data-src="${cars[i].img}">`;
     str += `<div class="card-body">`;
