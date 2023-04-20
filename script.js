@@ -55,9 +55,15 @@ function getCookie(name) {
 }
 function userHello() {
   let name = getCookie("username");
+  if(name == undefined)
+  {
+    console.log("undefined name. not loginned yet")
+  }
+  else{
   document.getElementById("forms").innerHTML = `<div class='container-fluid'>
             <h2 style="font:italic;font-weight:600;color:white;">Hello, ${name}</h2>
         </div>`;
+  } 
 }
 const slides = document.querySelectorAll(".slide");
 const next = document.querySelector("#next");
