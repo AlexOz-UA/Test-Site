@@ -264,7 +264,7 @@ $(function () {
         else if (
           q.toLowerCase().includes("bebra")
         ) {
-          $("#answers").append(`<div class="bot_answ">${bebra}</div>`);
+          $("#answers").append(`<div class="bot_answ">${bebra[Math.floor(Math.random() * bebra.length)]}</div>`);
         } else if (
           q.toLowerCase().includes("auto") ||
           q.toLowerCase().includes("about")
