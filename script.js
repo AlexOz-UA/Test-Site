@@ -232,6 +232,10 @@ $(function () {
     "Would you like to schedule an appointment for your vehicle?",
     "We also offer towing services in case of emergency."
   ];
+  const bebra = [
+    "Of course we sell Bebra, we are happy to provide you it. 1kg of Bebra will be 100 Euro.",
+    "Sorry! Our competitors - Bebreny, so we don’t sell it! But we have other options"
+  ]
   const hello = "Welcome to our auto shop! How can we assist you today?";
   const goodbye = "Thank you for choosing our auto shop! We look forward to serving you.";
 
@@ -256,6 +260,11 @@ $(function () {
           q.toLowerCase().includes("hello")
         ) {
           $("#answers").append(`<div class="bot_answ">${hello}</div>`);
+        }
+        else if (
+          q.toLowerCase().includes("bebra")
+        ) {
+          $("#answers").append(`<div class="bot_answ">${bebra}</div>`);
         } else if (
           q.toLowerCase().includes("auto") ||
           q.toLowerCase().includes("about")
