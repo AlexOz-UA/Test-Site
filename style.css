@@ -196,7 +196,7 @@ html {
   flex-direction: row-reverse; 
   color: whitesmoke;
   padding-left: 15px;
-  align-items:baseline;
+  align-items:center;
 }
 
 .load-wrap {
