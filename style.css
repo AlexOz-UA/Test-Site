@@ -372,8 +372,10 @@ html {
 }
 
 #cars{
+  display: flex;
   width: 100%;
   padding: 20px 0px;
+  justify-content: center;
 }
 
 .card-body{
@@ -381,6 +383,7 @@ html {
   justify-content: space-between;
   align-items: center;
   text-transform: capitalize;
+  gap: 10px;
 }
 
 #card{
@@ -411,13 +414,14 @@ html {
   row-gap: 25px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .cars-div {
     display: grid; 
     grid-template-columns: 1fr 1fr; 
-    padding: 20px 100px; 
+    padding: 20px 20px;
     column-gap:10px; 
-    row-gap:10px
+    row-gap:10px;
+    justify-content: center;
   }
   #Video{
     padding: 0px 20px;
@@ -425,17 +429,15 @@ html {
     justify-content: center;
     flex-wrap: wrap; 
   } 
-  .cars-div{
-    padding: 20px 50px;
-  }
 }
 
 @media (max-width: 768px) {
   .cars-div {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    padding: 20px 100px; 
-    row-gap:5px
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    padding: 30px; 
+    row-gap:5px;  
   } 
   #Video{
     flex-direction: row;
@@ -453,9 +455,9 @@ html {
 @media (max-width: 400px) {
   .cars-div {
     display: grid; 
-    grid-template-columns: 1fr; 
-    padding: 10px 50px; 
-    row-gap:5px
+    grid-template-columns: 90%; 
+    padding: 10px; 
+    row-gap:5px;
   } 
 }
 
