@@ -176,7 +176,7 @@ function insertCars(cars) {
 }
 function showModal(modal) {
   let div = document.getElementById(modal);
-  div.style.display = "block";
+  div.style.display = "flex";
 }
 function closeCart() {
   let div = document.getElementById("cartModal");
