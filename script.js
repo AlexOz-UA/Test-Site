@@ -129,16 +129,21 @@ function loadCars() {
   };
 }
 function insertCars(cars) {
-  var str = `<div class="container"> 
-               <div class="row">`;
+  var str = `<div class="cars-div"> `;
   for (let i = 0; i < cars.length; i++) {
-    str += `<div class="d-flex flex-column col col-sm-4 col-lg-4 col-6">`;
+    str += `<div>`;
     str += `<div id="card" class="card">`;
-    str += `<img id="dot" src="images/dot.gif" class="fixed3" data-src="${cars[i].img}">`;
+    str += `<div id="photo" style="display: flex; width: 100%; justify-content:center;">`;
+    str += `<img id="dot" src="images/dot.gif" class="fixed3" style="height:200px; width:350px;" data-src="${cars[i].img}">`;
+    str += `</div>`;
     str += `<div class="card-body">`;
     str += `<h5 class="card-title">${cars[i].name}</h5>`;
     str += `<h5 class="card-title">${cars[i].price}</h5>`;
-    str += `<button onclick="loadCarsForCart(${i})" class="btn btn-success"> <src class="fas fa-shopping-cart" style="height: 25px;" width="29px"></src>Add to cart</button>`;
+    str += `</div>`;
+    str += `<div class="card-button">`;
+    str += `<button onclick="loadCarsForCart(${i})" class="btn btn-success"> 
+    <src class="fas fa-shopping-cart" style="height: 25px;" width="29px"></src>
+    Add to cart</button>`;
     str += `</div>`;
     str += `</div>`;
     str += `</div>`;

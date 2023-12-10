@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
 body {
-  height: 2500px;
-  width: 910px;
   background-color: #282828;
   font-family: "Roboto", sans-serif;
   line-height: 1.6;
@@ -16,18 +16,14 @@ html {
 #cart {
   width: 100%;
   height: 400px;
-  padding: 10px;
   background: tan;
-  margin-right: 10px;
-  margin-top: 10px;
-  box-sizing: border-box;
   overflow: auto;
 }
 
 .modal {
   display: none;
   position: fixed;
-  z-index: 9999;
+  z-index: 10000;
   left: 0;
   top: 0;
   width: 100%;
@@ -41,11 +37,6 @@ html {
   height: 100%;
   border: none;
 }
-/* #myVideo {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-} */
 
 .container2 {
   top: 500px;
@@ -54,6 +45,7 @@ html {
   width: 100%;
   padding-top: 56.25%;
 }
+
 .responsive-iframe {
   position: absolute;
   top: 100px;
@@ -71,7 +63,7 @@ html {
 .modal {
   display: none;
   position: fixed;
-  z-index: 2;
+  z-index: 10000;
   left: 0;
   top: 0;
   width: 100%;
@@ -90,11 +82,11 @@ html {
 }
 
 #cartModal {
-  display: none;
+  opacity: 0;
+  display: flex;
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
+  justify-content: center;
+  z-index: 10;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -111,16 +103,104 @@ html {
 }
 
 #navbarMain {
-  z-index: 1;
+  display: flex; 
+  justify-content: space-between;
+  z-index: 999;
   position: fixed;
-  width: 1550px;
-  opacity: 0;
   animation: navbaranim 2.5s ease;
   animation-delay: 1.5s;
+  width: 100%; 
+  list-style: none; 
+  align-items: center; 
+  padding-top: 5px;
+}
+
+.menu{
+  display: flex; 
+  flex-direction: row-reverse;
+  column-gap: 15px;
+  padding-right: 15px;
+  align-items: center;
+}
+
+.burger-menu{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0;
+}
+
+.burger-menu input,
+.burger-menu::before,
+.burger-menu::after{
+  content: "";
+  width: 30px;
+  height: 5px;
+  background-color: whitesmoke;
+  border-radius: 999px;
+  transition: all 0.4s ease-in-out;
+}
+
+.burger-menu input{
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.burger-menu input:checked{
+  opacity: 0;
+}
+
+.burger-menu:has(input:checked)::before{
+  transform: rotate(-45deg) translate(-5.5px, 12px);
+}
+
+.burger-menu:has(input:checked)::after{
+  transform: rotate(45deg) translate(-3.5px, -10px);
+}
+
+.burger-menu-bg{
+  width: 100%;
+  background: white;
+}
+
+@media (max-width: 768px) {
+  .menu{
+    flex-direction: row;
+  }
+  .menu-btn{
+    opacity: 0;
+  }
+  .burger-menu{
+    opacity: 1;
+  }
+}
+
+.line {
+  width: 30px;
+  height: 2.5px;
+  background-color: #fff;
+  margin: 7px 0;
+  transition: 0.4s;
+}
+
+.line:nth-child(1){
+  transform: rotate(90);
+  transition: 0.3s;
+}
+
+.nav__logo{
+  display: flex; 
+  flex-direction: row-reverse; 
+  color: whitesmoke;
+  padding-left: 15px;
+  align-items:baseline;
 }
 
 .load-wrap {
-  float: left;
+  float: left;  
   width: 200px;
   height: 200px;
   margin: 0 10px 10px 0;
@@ -143,6 +223,7 @@ html {
 }
 
 #loader {
+  opacity: 0;
   top: 0;
   left: 0;
   justify-content: center;
@@ -156,14 +237,23 @@ html {
 }
 
 .headerMain {
+  text-transform: capitalize;
+  text-align: center;
+  font-family: 'Italiana';
+  color: whitesmoke!important;
   opacity: 0;
-  font: icon;
-  font-size: 20px;
-  font-weight: 600;
-  color: #a0a0a0;
+  font-size: 75px!important;
+  font-weight: 500;
   animation: headeranim 2.5s ease;
   animation-delay: 1.5s;
 }
+
+@media (max-width: 768px) {
+  .headerMain{
+    font-size: 55px !important;
+  }
+}
+
 .heading {
   z-index: 1;
   position: absolute;
@@ -187,7 +277,7 @@ html {
   position: relative;
   overflow: hidden;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   opacity: 0;
   animation: carouselcaranim 2.5s ease;
   animation-delay: 1.5s;
@@ -280,37 +370,111 @@ html {
 .slide:nth-child(3) {
   background: url(images/car4.jpg) no-repeat center top/cover;
 }
+
 #cars{
-  width: 165%;
+  width: 100%;
+  padding: 20px 0px;
 }
-@media (max-width: 768px) {
-  #cars {
-    width: 45%;
+
+.card-body{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+#card{
+  background-color: whitesmoke;
+}
+
+.cars-div{
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  padding: 20px 100px; 
+  column-gap:20px; 
+  row-gap:20px
+}
+
+.card-button{
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+#Video{
+  width: 100%; 
+  display: flex; 
+  align-items: center; 
+  padding: 0px 35px; 
+  flex-direction: column;
+  row-gap: 25px;
+}
+
+@media (max-width: 1200px) {
+  .cars-div {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    padding: 20px 100px; 
+    column-gap:10px; 
+    row-gap:10px
+  }
+  #Video{
+    padding: 0px 20px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap; 
   } 
-  .myFrame{
-    left: -375px;
-  }
-  .forms{
-    position: absolute;
-    float: left;
+  .cars-div{
+    padding: 20px 50px;
   }
 }
+
+@media (max-width: 768px) {
+  .cars-div {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    padding: 20px 100px; 
+    row-gap:5px
+  } 
+  #Video{
+    flex-direction: row;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    width: 100%;
+  } 
+  video{
+    height: 100%;
+    width: 100%;
+    padding: 0px 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .cars-div {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    padding: 10px 50px; 
+    row-gap:5px
+  } 
+}
+
 #scrollUp {
   display: block;
-  padding: 20px;
-  background-color: rgb(255, 255, 255);
+  padding: 8px;
+  background-color: whitesmoke;
   color: rgb(153, 0, 255);
   position: fixed;
   right: 80px;
   bottom: 80px;
   text-decoration: none;
-  font-size: 30px;
-  width: 85px;
-  height: 85px;
+  font-size: 25px;
+  width: 55px;
+  height: 55px;
   box-sizing: border-box;
   text-align: center;
   border-radius: 50%;
-  opacity: 1;
+  opacity: 0;
   transition: all 1s;
 }
 #scrollUp.fade {
@@ -318,6 +482,7 @@ html {
 }
 
 #chatbot {
+  opacity: 0;
   position: fixed;
   bottom: 20px;
   width: 260px;
@@ -333,7 +498,6 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  /* align-items: flex-end; */
   min-width: 100%;
   min-height: 100%;
 }
