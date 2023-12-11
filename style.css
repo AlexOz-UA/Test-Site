@@ -104,7 +104,7 @@ html {
 #navbarMain {
   display: flex; 
   justify-content: space-between;
-  z-index: 999;
+  z-index: 2;
   position: fixed;
   animation: navbaranim 2.5s ease;
   animation-delay: 1.5s;
@@ -154,26 +154,47 @@ html {
 
 .burger-menu:has(input:checked)::before{
   transform: rotate(-45deg) translate(-5.5px, 12px);
+  z-index: 2;
 }
 
 .burger-menu:has(input:checked)::after{
   transform: rotate(45deg) translate(-3.5px, -10px);
-}
-
-.burger-menu-bg{
-  width: 100%;
-  background: white;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
-  .menu{
-    flex-direction: row;
+  #navbarMain{
+    padding-top: 10px;
   }
-  .menu-btn{
-    opacity: 0;
+  .menu {
+    display: none;
+  }
+  .burger-menu input[type="checkbox"]:checked + .menu{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
   }
   .burger-menu{
     opacity: 1;
+    padding-right: 10px;
+  }
+  .burger-menu-bg{
+    transition: all 0.7s;
+    opacity: 1;
+    top: 0;
+    left: -100%;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 100vh;
+    background: #282828;
+    position: fixed;
+  }
+  .burger-menu input[type="checkbox"]:checked + .burger-menu-bg{
+    left: 0;
   }
 }
 
@@ -193,9 +214,10 @@ html {
 .nav__logo{
   display: flex; 
   flex-direction: row-reverse; 
+  z-index: 2;
   color: whitesmoke;
   padding-left: 15px;
-  align-items:center;
+  /* align-items:center; */
 }
 
 .load-wrap {
@@ -348,7 +370,7 @@ html {
   cursor: pointer;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
   .slide .content {
     bottom: -300px;
     left: 0;
@@ -458,6 +480,10 @@ html {
     padding: 10px; 
     row-gap:5px;
   } 
+  .fixed3{
+    width: 295px!important;
+    height: calc(295px * 0.7)!important;
+  }
 }
 
 #scrollUp {
