@@ -37,7 +37,7 @@
             </a>
           </div>
           <div>
-          <div class="menu">
+          <div class="menu" id="menu">
           <li>
             <button class="btn btn-outline-success menu-btn" onclick="openSignUpForm()"><img src="images/add-user.png"
                 style="height: 29px;" width="29px"> Sign up</button>
@@ -53,7 +53,7 @@
           </li>
         </div>
           <label class="burger-menu" id="burger-menu">
-            <input type="checkbox" id="horns" name="horns">
+            <input type="checkbox">
             <div class="burger-menu-bg"></div>
           </label>
         </div> 
@@ -80,7 +80,7 @@
     <button id="prev"><i class="fas fa-arrow-left"></i></button>
     <button id="next"><i class="fas fa-arrow-right"></i></button>
   </div>
-  <div style="width: 100%; background-color: #282828; display: flex; justify-content: center; flex-wrap: wrap; row-gap: 20px; padding: 20px 20px 0px 20px;">
+  <div style="width: 100%; background-color: #282828; display: flex; justify-content: center; flex-wrap: wrap; row-gap: 20px; padding: 20px 20px 0px 20px; text-align: center;">
       <h1 style="color: #a0a0a0;">Here is a little information about us:</h1>
       <p style="color: rgb(211, 211, 211); font-size: 20px; padding: 0px 35px;">Welcome to Elite Motors, the ultimate  destination for theworld's
         most luxurious and high-performance vehicles. Our exclusive selection of premium cars is curated for discerning individuals
@@ -94,9 +94,9 @@
   <div id="cars"></div>
   <div id="Video">
     <div>
-      <h1 style="display: flex; color: whitesmoke; flex-grow: 1;">Here you can
-        watch a short test-drive
-        video from our client:</h1>
+      <h1>
+        Here you can watch a short test-drive Video from our client:
+      </h1>
     </div>
     <video style="position:relative;"
       id="myVideo" width="1000" height="400" controls>

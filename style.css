@@ -169,12 +169,12 @@ html {
   .menu {
     display: none;
   }
-  .burger-menu input[type="checkbox"]:checked + .menu{
+  .burger-menu input[type="checkbox"]:checked + div.menu{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    width: 100%;
+    width: 100%;  
   }
   .burger-menu{
     opacity: 1;
@@ -430,9 +430,11 @@ html {
   width: 100%; 
   display: flex; 
   align-items: center; 
-  padding: 0px 35px; 
+  padding: 20px 35px; 
+  color: whitesmoke;
   flex-direction: column;
   row-gap: 25px;
+  text-align: center;
 }
 
 @media (max-width: 1300px) {
