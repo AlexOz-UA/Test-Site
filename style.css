@@ -13,23 +13,32 @@ html {
 .formgroup label {
   font-weight: bold;
 }
+
 #cart {
   width: 100%;
-  height: 400px;
+  height: 90%;
   background: tan;
   overflow: auto;
 }
 
-.modal {
+#cartModal {
+  top: 0;
   display: none;
   position: fixed;
+  justify-content: center;
   z-index: 10000;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.myFrame {
+  position: relative;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  margin: 30px;
 }
 
 .modal iframe {
@@ -62,43 +71,39 @@ html {
 
 .modal {
   display: none;
-  position: fixed;
-  z-index: 10000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+}
+
+.modal-signup-container{
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: 10000;
+  display: none;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-login-container{
+  left: 0;
+  top: 0;
+  position: relative;
+  z-index: 10000;
+  display: none;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
   background-color: #fefefe;
-  padding: 2 0px;
-  margin-left: 155px;
   border: 1px solid #888;
-  width: 80%;
   height: 80%;
-}
-
-#cartModal {
-  display: none;
-  position: fixed;
-  justify-content: center;
-  z-index: 10000;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.myFrame {
-  position: relative;
-  justify-self: center;
-  text-align: center;
-  height: 500px;
-  width: 750px;
-  margin: auto;
 }
 
 #navbarMain {
@@ -110,7 +115,7 @@ html {
   animation-delay: 1.5s;
   width: 100%; 
   list-style: none; 
-  align-items: center; 
+  align-items: baseline; 
   padding-top: 5px;
 }
 
@@ -162,25 +167,95 @@ html {
   z-index: 2;
 }
 
-@media (max-width: 768px) {
-  #navbarMain{
-    padding-top: 10px;
+.menu-for-burger{
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  margin-bottom: 20vh;
+  list-style: none;
+  animation: fadeIn 0.7s;
+  row-gap: 20px;
+  align-items: center;
+}
+
+.menu-for-burger-container{
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.menu-for-burger-container-open{
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
   }
+  100%{
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav__logo{
+    padding: 0px 0px 0px 10px!important;
+    align-items: center;
+    text-align: center;
+  }
+
+  #navbarMain{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 0px;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
   .menu {
     display: none;
   }
-  .burger-menu input[type="checkbox"]:checked + div.menu{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;  
+
+  .menu-container{
+    display: flex; 
+    flex-direction: column-reverse;
+    align-items: flex-end;
   }
+
+  .menu-container-open{
+    display: flex; 
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+
+  .open{
+    display: flex;
+    row-gap: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .burger-menu{
     opacity: 1;
     padding-right: 10px;
   }
+
   .burger-menu-bg{
+    overflow: auto;
     transition: all 0.7s;
     opacity: 1;
     top: 0;
@@ -193,6 +268,7 @@ html {
     background: #282828;
     position: fixed;
   }
+  
   .burger-menu input[type="checkbox"]:checked + .burger-menu-bg{
     left: 0;
   }
@@ -217,7 +293,16 @@ html {
   z-index: 2;
   color: whitesmoke;
   padding-left: 15px;
-  /* align-items:center; */
+  align-items: baseline;
+}
+
+.nav__logo-open{
+  display: flex; 
+  flex-direction: row-reverse; 
+  z-index: 2;
+  color: whitesmoke;
+  padding-left: 10px;
+  align-items: baseline;
 }
 
 .load-wrap {
@@ -228,6 +313,15 @@ html {
   border-radius: 5px;
   text-align: center;
   background-color: #282828;
+}
+
+@media (max-width:768px) {
+  .load-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .load .ring {
@@ -244,7 +338,6 @@ html {
 }
 
 #loader {
-  opacity: 0;
   top: 0;
   left: 0;
   justify-content: center;
@@ -252,7 +345,7 @@ html {
   width: 100%;
   align-items: center;
   z-index: 999999;
-  height: 100vh;
+  height: 100%;
   background: #282828;
   position: fixed;
 }
@@ -343,6 +436,7 @@ html {
 }
 
 .buttons button {
+  z-index: 1;
   border: 2px solid #fff;
   background-color: transparent;
   color: #fff;
@@ -414,7 +508,7 @@ html {
 .cars-div{
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr; 
-  padding: 20px 100px; 
+  padding: 20px 20px; 
   column-gap:20px; 
   row-gap:20px
 }
@@ -437,11 +531,11 @@ html {
   text-align: center;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1200px) {
   .cars-div {
     display: grid; 
     grid-template-columns: 1fr 1fr; 
-    padding: 20px 20px;
+    padding: 20px 0px;
     column-gap:10px; 
     row-gap:10px;
     justify-content: center;
@@ -475,7 +569,7 @@ html {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 410px) {
   .cars-div {
     display: grid; 
     grid-template-columns: 90%; 
@@ -487,6 +581,29 @@ html {
     height: calc(295px * 0.7)!important;
   }
 }
+
+@media (max-width: 315px) {
+  .cars-div {
+    display: grid; 
+    grid-template-columns: 60%; 
+    padding: 5px; 
+    row-gap:5px;
+  } 
+  .fixed3{
+    width: 130px!important;
+    height: calc(130px * 0.7)!important;
+  }
+  .card-body{
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+    gap: 5px;
+  }
+}
+
 
 #scrollUp {
   display: block;

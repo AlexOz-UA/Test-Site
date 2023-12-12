@@ -30,13 +30,13 @@
   </div>
   <div id="top" style="position: absolute; top: 0px"></div>
       <div id="navbarMain">
-          <div class="nav__logo">
+          <div class="nav__logo" id="nav__logo">
             <a style="padding-left: 10px; color: whitesmoke; text-decoration: none;" onclick="alert('Want to play some seaBattle?')" href="seaBattle.html">Game</a>
             <a href="#top" style="padding-right: 10px; text-decoration: none; color:whitesmoke;  border-right:whitesmoke 1px solid;">
               <img src="images/carsm.jpg" style="height: 29px;" width="29px"> Elite Motors
             </a>
           </div>
-          <div>
+          <div class="menu-container" id="menu-container">
           <div class="menu" id="menu">
           <li>
             <button class="btn btn-outline-success menu-btn" onclick="openSignUpForm()"><img src="images/add-user.png"
@@ -53,7 +53,7 @@
           </li>
         </div>
           <label class="burger-menu" id="burger-menu">
-            <input type="checkbox">
+            <input type="checkbox" id="burger-menu-input">
             <div class="burger-menu-bg"></div>
           </label>
         </div> 
@@ -68,6 +68,23 @@
   <div class="heading container text-center">
     <h1 class="headerMain" id="headerMain">Premium Cars Group <q>Elite Motors</q> </h1>
   </div>
+  <div class="menu-for-burger-container">
+  <div class="menu-for-burger" id="menu-for-burger">
+    <li>
+      <button class="btn btn-outline-success menu-btn" onclick="openSignUpForm()"><img src="images/add-user.png"
+          style="height: 29px;" width="29px"> Sign up</button>
+    </li>
+    <li>
+      <button class="btn btn-outline-success menu-btn" onclick="openLogInForm()"><img src="images/login.png"
+          style="height: 29px;" width="29px"> Log in</button>
+    </li>
+    <li>
+      <button class="btn btn-success menu-btn" id="open-cart" onclick="showModal('cartModal')">
+        <i class="fas fa-shopping-cart" style="height: 25px;" width="29px"></i>
+      </button>
+    </li>
+  </div>
+</div>
   <div id="carouselMain" class="slider">
     <div class="slide current">
     </div>
@@ -134,8 +151,8 @@
       </button>
     </form>
   </div>
-  <div class="container2">
-    <div id="login-modal" class="modal" style="justify-content: center; align-self: center;">
+    <div class="modal-login-container" id="modal-login-container">
+    <div id="login-modal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close">
@@ -148,8 +165,8 @@
     </div>
   </div>
   <a href="#top" id="scrollUp" class="fade"><i class="fas fa-arrow-up"></i></a>
-  <div class="container2">
-    <div id="signup-modal" class="modal" style="justify-content: center; align-self: center;">
+  <div class="modal-signup-container" id="modal-signup-container">
+    <div id="signup-modal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close">
@@ -160,6 +177,7 @@
         <iframe id="signup-iframe" class="responsive-iframe" src="signup.html" style="height: 270px;"></iframe>
       </div>
     </div>
+  </div>
     <script src="script.js"></script>
 </body>
 

@@ -21,9 +21,12 @@ function showPass(pass) {
     pass2.type = "password";
   }
 }
+const containerLoginModal = document.querySelector("#modal-login-container")
+const containerSignUpModal = document.querySelector("#modal-signup-container")
 function openLogInForm() {
   const loginModal = document.getElementById("login-modal");
   const loginIframe = document.getElementById("login-iframe");
+  containerLoginModal.style.display = "flex";
   loginModal.style.display = "block";
   loginIframe.src = "login.html";
 }
@@ -32,12 +35,14 @@ function closeLogInForm() {
   const loginModal = document.getElementById("login-modal");
   const loginIframe = document.getElementById("login-iframe");
   loginModal.style.display = "none";
+  containerLoginModal.style.display = "none";
   loginIframe.src = "";
   userHello();
 }
 function openSignUpForm() {
   const signupModal = document.getElementById("signup-modal");
   const signupIframe = document.getElementById("signup-iframe");
+  containerSignUpModal.style.display = "flex";
   signupModal.style.display = "block";
   signupIframe.src = "signup.html";
 }
@@ -46,6 +51,7 @@ function closeSignUpForm() {
   const signupModal = document.getElementById("signup-modal");
   const signupIframe = document.getElementById("signup-iframe");
   signupModal.style.display = "none";
+  containerSignUpModal.style.display = "none";
   signupIframe.src = "";
 }
 function getCookie(name) {
@@ -68,6 +74,11 @@ function userHello() {
 const slides = document.querySelectorAll(".slide");
 const next = document.querySelector("#next");
 const prev = document.querySelector("#prev");
+const burgerMenu = document.querySelector("#menu-for-burger");
+const burgerMenuContainer = document.querySelector(".menu-for-burger-container");
+const burgerMenuSwitch = document.querySelector("#burger-menu-input");
+const menuContainer = document.querySelector("#menu-container");
+const navLogo = document.querySelector("#nav__logo");
 const auto = true;
 const intervalTime = 5000;
 let slideInterval;
@@ -108,6 +119,21 @@ prev.addEventListener("click", (e) => {
     slideInterval = setInterval(nextSlide, intervalTime);
   }
 });
+
+burgerMenuSwitch.onchange = () => {
+  if(burgerMenu.classList == 'menu-for-burger'){
+    menuContainer.classList = ('menu-container-open');
+    burgerMenu.classList.add('open');
+    burgerMenuContainer.classList = ("menu-for-burger-container-open");
+    navLogo.classList = ('nav__logo-open');
+  }
+  else{
+    menuContainer.classList = ('menu-container');
+    burgerMenu.classList.remove('open');
+    burgerMenuContainer.classList = ("menu-for-burger-container");
+    navLogo.classList = ('nav__logo');
+  }
+}
 
 if (auto) {
   slideInterval = setInterval(nextSlide, intervalTime);
