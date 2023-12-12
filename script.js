@@ -26,6 +26,7 @@ const containerSignUpModal = document.querySelector("#modal-signup-container")
 function openLogInForm() {
   const loginModal = document.getElementById("login-modal");
   const loginIframe = document.getElementById("login-iframe");
+  document.body.style.overflow = "hidden";
   containerLoginModal.style.display = "flex";
   loginModal.style.display = "block";
   loginIframe.src = "login.html";
@@ -34,6 +35,7 @@ function openLogInForm() {
 function closeLogInForm() {
   const loginModal = document.getElementById("login-modal");
   const loginIframe = document.getElementById("login-iframe");
+  document.body.style.overflow = "auto";
   loginModal.style.display = "none";
   containerLoginModal.style.display = "none";
   loginIframe.src = "";
@@ -42,6 +44,7 @@ function closeLogInForm() {
 function openSignUpForm() {
   const signupModal = document.getElementById("signup-modal");
   const signupIframe = document.getElementById("signup-iframe");
+  document.body.style.overflow = "hidden";
   containerSignUpModal.style.display = "flex";
   signupModal.style.display = "block";
   signupIframe.src = "signup.html";
@@ -50,6 +53,7 @@ function openSignUpForm() {
 function closeSignUpForm() {
   const signupModal = document.getElementById("signup-modal");
   const signupIframe = document.getElementById("signup-iframe");
+  document.body.style.overflow = "auto";
   signupModal.style.display = "none";
   containerSignUpModal.style.display = "none";
   signupIframe.src = "";
@@ -203,10 +207,12 @@ function insertCars(cars) {
 function showModal(modal) {
   let div = document.getElementById(modal);
   div.style.display = "flex";
+  document.body.style.overflow = "hidden";
 }
 function closeCart() {
   let div = document.getElementById("cartModal");
   div.style.display = "none";
+  document.body.style.overflow = "auto";
 }
 function loadCarsForCart(id) {
   let xhttp = new XMLHttpRequest();
