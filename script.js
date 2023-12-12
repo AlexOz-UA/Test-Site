@@ -126,12 +126,14 @@ prev.addEventListener("click", (e) => {
 
 burgerMenuSwitch.onchange = () => {
   if(burgerMenu.classList == 'menu-for-burger'){
+    document.body.style.overflow = "hidden";
     menuContainer.classList = ('menu-container-open');
     burgerMenu.classList.add('open');
     burgerMenuContainer.classList = ("menu-for-burger-container-open");
     navLogo.classList = ('nav__logo-open');
   }
   else{
+    document.body.style.overflow = "auto";
     menuContainer.classList = ('menu-container');
     burgerMenu.classList.remove('open');
     burgerMenuContainer.classList = ("menu-for-burger-container");
