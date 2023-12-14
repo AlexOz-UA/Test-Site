@@ -35,7 +35,12 @@ function openLogInForm() {
 function closeLogInForm() {
   const loginModal = document.getElementById("login-modal");
   const loginIframe = document.getElementById("login-iframe");
+  if(menuContainer.classList = "menu-container-open"){
+    document.body.style.overflow = "hidden";
+  }
+  else{
   document.body.style.overflow = "auto";
+  }
   loginModal.style.display = "none";
   containerLoginModal.style.display = "none";
   loginIframe.src = "";
@@ -53,7 +58,12 @@ function openSignUpForm() {
 function closeSignUpForm() {
   const signupModal = document.getElementById("signup-modal");
   const signupIframe = document.getElementById("signup-iframe");
-  document.body.style.overflow = "auto";
+  if(menuContainer.classList = "menu-container-open"){
+    document.body.style.overflow = "hidden";
+  }
+  else{
+    document.body.style.overflow = "auto";
+  }
   signupModal.style.display = "none";
   containerSignUpModal.style.display = "none";
   signupIframe.src = "";
