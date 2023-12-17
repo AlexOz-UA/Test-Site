@@ -1,35 +1,41 @@
 [
       {
+        "number": 1,
         "name": "BMW 3 Series",
         "img": "images/car6.png",
         "price": "41.450$",  
         "description": "The BMW 3 Series is a compact executive car manufactured by the German automaker BMW since May 1975. It is the successor to the 02 Series and has been produced in seven different generations."
       },
       {
+        "number": 2,
         "name": "Bugatti Chiron Pur Sport",
         "img": "images/car9.png",
         "price": "3.400.000$",  
         "description": "The Audi A4 is a line of compact executive cars produced by the German car manufacturer Audi. The A4 has been built in five generations and is based on the Volkswagen Group B platform."
       },
       {
+        "number": 3,
         "name": "Lamborghini Aventador",
         "img": "images/car10.png",
         "price": "789.909$",  
         "description": "The BMW 3 Series is a compact executive car manufactured by the German automaker BMW since May 1975. It is the successor to the 02 Series and has been produced in seven different generations."
       },
       {
+        "number": 4,
         "name": "Mercedes E-class",
         "img": "images/car11.png",
         "price": "139.900$",       
         "description": "The Mercedes-Benz C-Class is a line of compact executive cars produced by Daimler AG. Introduced in 1993 as a replacement for the 190 (W201) range, the C-Class was the smallest model in the marque's line-up until the W168 A-Class arrived in 1997."
       },
       {
+        "number": 5,
         "name": "Lamborghini Aventador",
         "img": "images/car12.png",
         "price": "825.914$",       
         "description": "The Mercedes-Benz C-Class is a line of compact executive cars produced by Daimler AG. Introduced in 1993 as a replacement for the 190 (W201) range, the C-Class was the smallest model in the marque's line-up until the W168 A-Class arrived in 1997."
       },
       {
+        "number": 6,
         "name": "Audi A7",
         "img": "images/car13.png",
         "price": "69.200$",  

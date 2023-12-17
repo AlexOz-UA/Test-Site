@@ -35,8 +35,8 @@ function openLogInForm() {
 function closeLogInForm() {
   const loginModal = document.getElementById("login-modal");
   const loginIframe = document.getElementById("login-iframe");
-  if(menuContainer.classList = "menu-container-open"){
-    document.body.style.overflow = "hidden";
+  if(menuContainer.classList == "menu-container-open"){
+  document.body.style.overflow = "hidden";
   }
   else{
   document.body.style.overflow = "auto";
@@ -183,9 +183,12 @@ function insertCars(cars) {
     str += `<h5 class="card-title">${cars[i].price}</h5>`;
     str += `</div>`;
     str += `<div class="card-button">`;
-    str += `<button onclick="loadCarsForCart(${i})" class="btn btn-success"> 
-    <src class="fas fa-shopping-cart" style="height: 25px;" width="29px"></src>
+    str += `<button onclick="loadCarsForCart(${i})" class="cars-div__button"> 
+    <src class="fas fa-shopping-cart"></src>
     Add to cart</button>`;
+    str += `<a href="car-${cars[i].number}.html" class="cars-div__anker"> 
+    <src class="fas fa-car"></src>
+    See this car</a>`;
     str += `</div>`;
     str += `</div>`;
     str += `</div>`;
@@ -241,21 +244,60 @@ function loadCarsForCart(id) {
     }
   };
 }
+
+function cartHasAuto(cart, carNumber, price) {
+  for(let i = 0; i < cart.length; i++){
+    if(cart[i] && cart[i].firstChild && cart[i].firstChild.id && cart[i].firstChild.id == `cart-element-${carNumber}`){
+      cart[i].firstChild.innerHTML = parseInt(cart[i].firstChild.innerHTML) + 1;
+      let priceInt = parseInt(cart[i].firstChild.innerHTML) * parseFloat(price[i].firstChild.innerHTML.replace(/[^\d.]/g, '').replace(/\./g, ''));
+      price[i].firstChild.innerHTML = priceInt.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+      var cartHas = true;
+      return cartHas;
+    }
+    else{
+      var cartHas = false;
+    }
+  }
+  return cartHas;
+}
+
 function addCarToCart(cars, id) {
-  const cart = document.querySelector("#cart table");
-  let str = document.createElement("tr");
-  str.innerHTML += `<td class="image"><img style="width:190px; height:100px;" src="${cars[id].img}"></td>
-    <td class="name" id="${cars[id].name}">${cars[id].name}</td>
-       <td data-name="${id}" class="count">1</td>
-       <td class="price">${cars[id].price}</td>
-       <td><button class="remove-item btn btn-danger">Remove</button></td>`;
-  cart.appendChild(str);
-  const removeButton = str.querySelector(".remove-item");
+  const cartQuantity = document.querySelector("#cart__column__quantity");
+  const cartPrice = document.querySelector("#cart__column__price");
+  var isCarInside = cartHasAuto(cartQuantity.childNodes, cars[id].number, cartPrice.childNodes);
+  if(cartQuantity.childNodes[3] && isCarInside){
+    return
+  }
+  else{
+  const cartItem = document.querySelector("#cart__column__item");
+  const cartName = document.querySelector("#cart__column__name");
+  const cartRemove = document.querySelector("#cart__column__remove");
+  let strItem = document.createElement("div");
+  let strName = document.createElement("div");
+  let strQuantity = document.createElement("div");
+  let strPrice = document.createElement("div");
+  let strRemove = document.createElement("div");
+  strItem.innerHTML += `<div class="image" id="cart-element-${cars[id].number}"><img style="width:190px; height:100px;" src="${cars[id].img}"></div>`;
+  strName.innerHTML += `<p class="cart__element" id="cart-element-${cars[id].number}">${cars[id].name}</p>`;
+  strQuantity.innerHTML += `<p class="cart__element" data-name="${id}" id="cart-element-${cars[id].number}" class="count">1</p>`;
+  strPrice.innerHTML += `<p class="cart__element" id="cart-element-${cars[id].number}">${cars[id].price}</p>`;   
+  strRemove.innerHTML += `<div class="cart__element__button" id="cart-element-${cars[id].number}"><button class="remove-item btn btn-danger">Remove</button></div>`;
+  cartItem.appendChild(strItem);
+  cartName.appendChild(strName);
+  cartQuantity.appendChild(strQuantity);
+  cartPrice.appendChild(strPrice);
+  cartRemove.appendChild(strRemove);
+  const removeButton = strRemove.querySelector(".remove-item");
   removeButton.addEventListener("click", removeItem);
+  }
 }
 function removeItem(event) {
-  const row = event.target.parentNode.parentNode;
-  row.parentNode.removeChild(row);
+  const row = event.target.parentNode;
+  let auto = document.querySelectorAll(`#${row.id}`);
+  for(let i = 0; i < auto.length; i++){
+    auto[i].parentElement.remove();
+    auto[i].remove();
+  }
 }
 $(function () {
   const phrases = [

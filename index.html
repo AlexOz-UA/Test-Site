@@ -39,16 +39,16 @@
           <div class="menu-container" id="menu-container">
           <div class="menu" id="menu">
           <li>
-            <button class="btn btn-outline-success menu-btn" onclick="openSignUpForm()"><img src="images/add-user.png"
+            <button class="menu__button" onclick="openSignUpForm()"><img src="images/add-user.png"
                 style="height: 29px;" width="29px"> Sign up</button>
           </li>
           <li>
-            <button class="btn btn-outline-success menu-btn" onclick="openLogInForm()"><img src="images/login.png"
+            <button class="menu__button" onclick="openLogInForm()"><img src="images/login.png"
                 style="height: 29px;" width="29px"> Log in</button>
           </li>
           <li>
-            <button class="btn btn-success menu-btn" id="open-cart" onclick="showModal('cartModal')">
-              <i class="fas fa-shopping-cart" style="height: 25px;" width="29px"></i>
+            <button class="cars-div__button" id="open-cart" onclick="showModal('cartModal')">
+              <i class="fas fa-shopping-cart" style="height: 25px; justify-self: center;" width="29px"></i>
             </button>
           </li>
         </div>
@@ -64,15 +64,15 @@
   <div class="menu-for-burger-container">
   <div class="menu-for-burger" id="menu-for-burger">
     <li>
-      <button class="btn btn-outline-success menu-btn" onclick="openSignUpForm()"><img src="images/add-user.png"
+      <button class="menu__button" onclick="openSignUpForm()"><img src="images/add-user.png"
           style="height: 29px;" width="29px"> Sign up</button>
     </li>
     <li>
-      <button class="btn btn-outline-success menu-btn" onclick="openLogInForm()"><img src="images/login.png"
+      <button class="menu__button" onclick="openLogInForm()"><img src="images/login.png"
           style="height: 29px;" width="29px"> Log in</button>
     </li>
     <li>
-      <button class="btn btn-success menu-btn" id="open-cart" onclick="showModal('cartModal')">
+      <button class="cars-div__button" id="open-cart" onclick="showModal('cartModal')">
         <i class="fas fa-shopping-cart" style="height: 25px;" width="29px"></i>
       </button>
     </li>
@@ -121,15 +121,23 @@
       </button>
       <h1>Your Cart</h1>
       <div id="cart">
-        <table id="table">
-          <tr>
-            <th>Item</th>
-            <th style="position: relative; left: 5px;">Price</th>
-            <th style="position: relative; left: 10px;">Quantity</th>
-            <th style="position: relative; left: 15px;">Price</th>
-            <th style="position: relative; left: 20px;">Remove</th>
-          </tr>
-        </table>
+        <div id="table">
+          <div class="cart__column__image" id="cart__column__item">
+            <p>Item</p>
+          </div>
+          <div class="cart__column" id="cart__column__name">
+            <p>Name</p>
+          </div>
+          <div class="cart__column" id="cart__column__quantity">
+            <p>Quantity</p>
+          </div>
+          <div class="cart__column" id="cart__column__price">
+            <p>Price</p>
+          </div>
+          <div class="cart__column" id="cart__column__remove">
+            <p>Remove</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
