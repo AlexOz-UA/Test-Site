@@ -249,8 +249,9 @@ function cartHasAuto(cart, carNumber, price) {
   for(let i = 0; i < cart.length; i++){
     if(cart[i] && cart[i].firstChild && cart[i].firstChild.id && cart[i].firstChild.id == `cart-element-${carNumber}`){
       cart[i].firstChild.innerHTML = parseInt(cart[i].firstChild.innerHTML) + 1;
-      let priceInt = parseInt(cart[i].firstChild.innerHTML) * parseFloat(price[i].firstChild.innerHTML.replace(/[^\d.]/g, '').replace(/\./g, ''));
-      price[i].firstChild.innerHTML = priceInt.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+      console.log(cart);
+      // let priceInt = parseFloat(price[i].firstChild.innerHTML.replace(/[^\d.]/g, '').replace(/\./g, '')) ;
+      // price[i].firstChild.innerHTML = priceInt.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace(/\.00$/, '');
       var cartHas = true;
       return cartHas;
     }
